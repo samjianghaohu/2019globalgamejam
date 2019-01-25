@@ -34,7 +34,7 @@ public class Enemy_AI : MonoBehaviour
         if (state == PATROL)
         {
             Vector3 targetPos;
-            if (currentPhase <= patrolPhaseNum)
+            if (currentPhase <= patrolTurningBack)
             {
                 targetPos = waypoints[currentPhase];
             }
