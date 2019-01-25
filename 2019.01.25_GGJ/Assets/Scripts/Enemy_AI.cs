@@ -40,7 +40,7 @@ public class Enemy_AI : MonoBehaviour
             }
             else
             {
-                targetPos = waypoints[currentPhase - patrolTurningBack];
+                targetPos = waypoints[waypoints.Length - 1 - (currentPhase - patrolTurningBack)];
             }
 
             // Flip itself depending on the direction it's going.
