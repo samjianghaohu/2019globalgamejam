@@ -144,7 +144,7 @@ Transform:
   - {fileID: 907110535}
   - {fileID: 1265538249}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTrans: {fileID: 609579233}
   camOffset: {x: 0, y: 0, z: 0}
+  boundaries: {fileID: 113461308}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -357,7 +358,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &609579234
 BoxCollider2D:
@@ -397,7 +398,7 @@ GameObject:
   - component: {fileID: 907110537}
   - component: {fileID: 907110536}
   m_Layer: 0
-  m_Name: Wall Up
+  m_Name: Wall Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -503,7 +504,7 @@ GameObject:
   - component: {fileID: 1265538251}
   - component: {fileID: 1265538250}
   m_Layer: 0
-  m_Name: Wall Down
+  m_Name: Wall Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
