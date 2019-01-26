@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5104685857216131656}
   m_Layer: 10
   m_Name: Guard_musician
-  m_TagString: Untagged
+  m_TagString: Guards
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

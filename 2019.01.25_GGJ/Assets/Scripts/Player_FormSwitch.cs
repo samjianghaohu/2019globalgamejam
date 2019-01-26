@@ -11,17 +11,17 @@ public class Player_FormSwitch : MonoBehaviour
 
     public GameObject hudObj;
 
-    GameObject player;
     Player_AnimationController playerAnim;
     Player_Movement playerMv;
+    Player_Attack playerAtk;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
-        playerAnim = player.GetComponent<Player_AnimationController>();
-        playerMv = player.GetComponent<Player_Movement>();
+        playerAnim = GetComponent<Player_AnimationController>();
+        playerMv = GetComponent<Player_Movement>();
+        playerAtk = GetComponent<Player_Attack>();
     }
 
     // Update is called once per frame
@@ -47,6 +47,7 @@ public class Player_FormSwitch : MonoBehaviour
         playerMv.mvSpd = 297f;
         playerAnim.BecomeKid();
         hudObj.GetComponent<Animator>().SetTrigger("BecomeKid");
+        playerAtk.isEnabled = true;
 
     }
 
@@ -55,5 +56,6 @@ public class Player_FormSwitch : MonoBehaviour
         playerMv.mvSpd = 170f;
         playerAnim.BecomeOld();
         hudObj.GetComponent<Animator>().SetTrigger("BecomeOld");
+        playerAtk.isEnabled = false;
     }
 }

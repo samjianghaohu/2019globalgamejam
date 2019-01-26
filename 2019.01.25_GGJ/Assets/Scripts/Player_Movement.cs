@@ -55,7 +55,7 @@ public class Player_Movement : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(transform.rotation.x, 180, transform.rotation.z);
         }
-        else
+        else if (myRGBody.velocity.x < 0)
         {
             transform.eulerAngles = new Vector3(transform.rotation.x, 0, transform.rotation.z);
         }
