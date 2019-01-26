@@ -14,6 +14,7 @@ public class Player_FormSwitch : MonoBehaviour
     Player_AnimationController playerAnim;
     Player_Movement playerMv;
     Player_Attack playerAtk;
+    Player_SecurityLevel playerSLvl;
     
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class Player_FormSwitch : MonoBehaviour
         playerAnim = GetComponent<Player_AnimationController>();
         playerMv = GetComponent<Player_Movement>();
         playerAtk = GetComponent<Player_Attack>();
+        playerSLvl = GetComponent<Player_SecurityLevel>();
     }
 
     // Update is called once per frame
@@ -48,6 +50,7 @@ public class Player_FormSwitch : MonoBehaviour
         playerAnim.BecomeKid();
         hudObj.GetComponent<Animator>().SetTrigger("BecomeKid");
         playerAtk.isEnabled = true;
+        playerSLvl.isKid = true;
 
     }
 
@@ -57,5 +60,6 @@ public class Player_FormSwitch : MonoBehaviour
         playerAnim.BecomeOld();
         hudObj.GetComponent<Animator>().SetTrigger("BecomeOld");
         playerAtk.isEnabled = false;
+        playerSLvl.isKid = false;
     }
 }

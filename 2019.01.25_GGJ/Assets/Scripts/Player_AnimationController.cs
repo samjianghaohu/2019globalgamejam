@@ -38,4 +38,10 @@ public class Player_AnimationController : MonoBehaviour
     {
         myAnimator.SetBool("IsWalking", false);
     }
+
+
+    public void Attack()
+    {
+        myAnimator.SetTrigger("Attack");
+    }
 }
