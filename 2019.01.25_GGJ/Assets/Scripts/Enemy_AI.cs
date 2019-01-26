@@ -35,7 +35,7 @@ public class Enemy_AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(myAnimator);
+
         myAnimator.SetBool("IsWalking", true);
        
         if (state == PATROL)
