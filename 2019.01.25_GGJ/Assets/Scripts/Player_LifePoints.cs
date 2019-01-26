@@ -24,12 +24,9 @@ public class Player_LifePoints : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage()
     {
-        if (collision.tag == "Enemies") { 
-            lifePoint -= 1;
-            hud.GetComponent<Animator>().SetTrigger("ReduceLP");
-        }
-
+        lifePoint -= 1;
+        hud.GetComponent<Animator>().SetTrigger("ReduceLP");
     }
 }

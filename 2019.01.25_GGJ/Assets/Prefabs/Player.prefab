@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9f3652a886a4934913cb1b526b57f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 0}
 --- !u!50 &6419194108413693137
 Rigidbody2D:
   serializedVersion: 4
@@ -333,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &304274147060062518
 Transform:
   m_ObjectHideFlags: 0
@@ -342,8 +343,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7815113499084702310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.21, y: 0, z: 0}
-  m_LocalScale: {x: 0.65843755, y: 0.7625, z: 1}
+  m_LocalPosition: {x: -1.78, y: 0, z: 0}
+  m_LocalScale: {x: 0.47736725, y: 0.7625, z: 1}
   m_Children: []
   m_Father: {fileID: 6419194108413693166}
   m_RootOrder: 0

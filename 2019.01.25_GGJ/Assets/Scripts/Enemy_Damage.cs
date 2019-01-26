@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_HitBox : MonoBehaviour
-{
+public class Enemy_Damage : MonoBehaviour
+{// This script manages enemy dealing damage to player.
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,18 +17,12 @@ public class Player_HitBox : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemies")
+        if (collision.tag == "Player")
         {
-            if (collision.transform.parent.tag == "Guards")
-            {
-                Destroy(collision.transform.parent.gameObject);
-            }
-            else
-            {
-                Destroy(collision.gameObject);
-            }
+            collision.GetComponent<Player_LifePoints>().TakeDamage();
         }
     }
 }

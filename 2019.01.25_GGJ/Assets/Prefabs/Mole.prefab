@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 6641870027901001217}
   - component: {fileID: 6641870027901001244}
   - component: {fileID: 6641870027901001219}
+  - component: {fileID: 4004534418893644306}
   - component: {fileID: 6641870027901001218}
   - component: {fileID: 6081644815220922130}
   m_Layer: 10
   m_Name: Mole
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +109,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &4004534418893644306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6641870027901001216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81620b7e56c53456dbfe1a2eb051036c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6641870027901001218
 MonoBehaviour:
   m_ObjectHideFlags: 0
