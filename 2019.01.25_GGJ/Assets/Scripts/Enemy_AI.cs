@@ -73,6 +73,30 @@ public class Enemy_AI : MonoBehaviour
             }
 
 
+            // Change detect areas based on the direction it's going.
+            if (Mathf.Abs(targetPos.x - transform.localPosition.x) >= 0.0001f)
+            {
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(false);
+            }
+            else
+            {
+                if (targetPos.y > transform.localPosition.y)
+                {
+                    transform.GetChild(0).gameObject.SetActive(false);
+                    transform.GetChild(1).gameObject.SetActive(true);
+                    transform.GetChild(2).gameObject.SetActive(false);
+
+                }
+                else
+                {
+                    transform.GetChild(0).gameObject.SetActive(false);
+                    transform.GetChild(1).gameObject.SetActive(false);
+                    transform.GetChild(2).gameObject.SetActive(true);
+                }
+            }
+
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, targetPos, patrolSpd * Time.deltaTime);
             if (Vector3.Distance(transform.localPosition, targetPos) <= 0.0001f)
             {
