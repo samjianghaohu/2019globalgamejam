@@ -19,7 +19,7 @@ public class Player_LifePoints : MonoBehaviour
     {
         if (lifePoint <= 0)
         {
-            Debug.Log("Game Over");
+            //Debug.Log("Game Over");
         }
     }
 
