@@ -61,7 +61,7 @@ public class Enemy_AI : MonoBehaviour
             }
 
             // Change walking loop when walking up.
-            if (targetPos.y > transform.localPosition.y)
+            if (targetPos.y > transform.localPosition.y && Mathf.Abs(targetPos.y - transform.localPosition.y) > Mathf.Abs(targetPos.x - transform.localPosition.x))
             {
                 myAnimator.SetBool("IsUp", true);
                 
@@ -126,7 +126,7 @@ public class Enemy_AI : MonoBehaviour
 
 
         // Change walking loop when walking up.
-        if (playerTrans.position.y > transform.position.y)
+        if (playerTrans.position.y > transform.position.y && Mathf.Abs(playerTrans.position.y - transform.position.y) > Mathf.Abs(playerTrans.position.x - transform.position.x))
         {
             myAnimator.SetBool("IsUp", true);
 
