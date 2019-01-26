@@ -6,6 +6,7 @@ public class Player_LifePoints : MonoBehaviour
 {// This script manages player taking damage.
 
     int lifePoint = 3;
+    public GameObject hud;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,10 @@ public class Player_LifePoints : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemies") { }
-        lifePoint -= 1;
+        if (collision.tag == "Enemies") { 
+            lifePoint -= 1;
+            hud.GetComponent<Animator>().SetTrigger("ReduceLP");
+        }
+
     }
 }
