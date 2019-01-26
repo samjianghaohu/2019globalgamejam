@@ -18,6 +18,8 @@ public class Enemy_AI : MonoBehaviour
     int currentPhase = 1;
 
     Transform playerTrans;
+    Animator myAnimator;
+
     
     // Start is called before the first frame update
     void Start()
@@ -26,11 +28,16 @@ public class Enemy_AI : MonoBehaviour
         patrolTurningBack = patrolPhaseNum / 2;
 
         playerTrans = GameObject.FindWithTag("Player").transform;
+        myAnimator = GetComponent<Animator>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(myAnimator);
+        myAnimator.SetBool("IsWalking", true);
+       
         if (state == PATROL)
         {
             Vector3 targetPos;
@@ -46,11 +53,23 @@ public class Enemy_AI : MonoBehaviour
             // Flip itself depending on the direction it's going.
             if (targetPos.x >= transform.localPosition.x)
             {
-                transform.eulerAngles = new Vector3(transform.rotation.x, 0, transform.rotation.z);
+                transform.eulerAngles = new Vector3(transform.rotation.x, 180, transform.rotation.z);
             }
             else
             {
-                transform.eulerAngles = new Vector3(transform.rotation.x, 180, transform.rotation.z);
+                transform.eulerAngles = new Vector3(transform.rotation.x, 0, transform.rotation.z);
+            }
+
+            // Change walking loop when walking up.
+            if (targetPos.y > transform.localPosition.y)
+            {
+                myAnimator.SetBool("IsUp", true);
+                
+            }
+            else
+            {
+                myAnimator.SetBool("IsUp", false);
+
             }
 
 
@@ -98,11 +117,24 @@ public class Enemy_AI : MonoBehaviour
         // Flip itself depending on the direction it's going.
         if (playerTrans.position.x >= transform.position.x)
         {
-            transform.eulerAngles = new Vector3(transform.rotation.x, 0, transform.rotation.z);
+            transform.eulerAngles = new Vector3(transform.rotation.x, 180, transform.rotation.z);
         }
         else
         {
-            transform.eulerAngles = new Vector3(transform.rotation.x, 180, transform.rotation.z);
+            transform.eulerAngles = new Vector3(transform.rotation.x, 0, transform.rotation.z);
+        }
+
+
+        // Change walking loop when walking up.
+        if (playerTrans.position.y > transform.position.y)
+        {
+            myAnimator.SetBool("IsUp", true);
+
+        }
+        else
+        {
+            myAnimator.SetBool("IsUp", false);
+
         }
 
 
