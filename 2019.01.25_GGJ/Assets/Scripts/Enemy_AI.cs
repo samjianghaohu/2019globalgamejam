@@ -40,6 +40,8 @@ public class Enemy_AI : MonoBehaviour
        
         if (state == PATROL)
         {
+            transform.GetChild(3).gameObject.SetActive(false); // Exclamation display
+
             Vector3 targetPos;
             if (currentPhase <= patrolTurningBack)
             {
@@ -105,6 +107,13 @@ public class Enemy_AI : MonoBehaviour
             }
         }else if (state == CHASE)
         {
+            // When chasing player, turn off search light
+            // and show exclamation mark
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(true);
+
             // Look at the player
             RaycastHit2D hit = Physics2D.Raycast(transform.position, (playerTrans.position - transform.position), Mathf.Infinity, myLayerMask);
             //If enemy is able to see player
