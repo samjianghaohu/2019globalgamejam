@@ -29,4 +29,13 @@ public class Player_AnimationController : MonoBehaviour
     {
         myAnimator.SetTrigger("BecomeOld");
     }
+
+    public void StartWalking() {
+        myAnimator.SetBool("IsWalking", true);
+    }
+
+    public void StopWalking()
+    {
+        myAnimator.SetBool("IsWalking", false);
+    }
 }
