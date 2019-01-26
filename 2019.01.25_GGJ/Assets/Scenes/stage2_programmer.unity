@@ -6985,7 +6985,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d748c42c171324703b66e707ad7cd036, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27a7d4646a10742c4b51151283d638ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19049,6 +19049,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4217688445376446875, guid: fd349473184994db08f33e461d33c3b5,
+        type: 3}
+      propertyPath: hudObj
+      value: 
+      objectReference: {fileID: 892935435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd349473184994db08f33e461d33c3b5, type: 3}
 --- !u!1001 &6641870027404923820

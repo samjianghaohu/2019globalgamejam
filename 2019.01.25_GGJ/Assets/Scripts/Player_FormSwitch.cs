@@ -46,6 +46,7 @@ public class Player_FormSwitch : MonoBehaviour
     {
         playerMv.mvSpd = 350f;
         playerAnim.BecomeKid();
+        hudObj.GetComponent<Animator>().SetTrigger("BecomeKid");
 
     }
 
@@ -53,5 +54,6 @@ public class Player_FormSwitch : MonoBehaviour
     {
         playerMv.mvSpd = 200f;
         playerAnim.BecomeOld();
+        hudObj.GetComponent<Animator>().SetTrigger("BecomeOld");
     }
 }
