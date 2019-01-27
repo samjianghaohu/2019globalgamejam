@@ -54,6 +54,7 @@ public class Event_TalkingToBho : MonoBehaviour
                     {
                         cameraTrans.GetComponent<Camera_Movement>().inCutscene = false;
                         playerTrans.GetComponent<Player_Movement>().inCutscene = false;
+                        playerTrans.GetComponent<Player_FormSwitch>().isSwitcheEnabled = true;
                         isTalking = false;
                         isDialogueTriggered = true;
                     }

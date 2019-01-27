@@ -11,7 +11,7 @@ public class Player_FormSwitch : MonoBehaviour
 
     public GameObject hudObj;
     public GameObject pageParticlePrefab;
-    public bool isSwitcheEnabled = true;
+    public bool isSwitcheEnabled = false;
 
     Player_AnimationController playerAnim;
     Player_Movement playerMv;
@@ -35,21 +35,24 @@ public class Player_FormSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift) && isSwitcheEnabled)
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
-            GameObject pagesObj = Instantiate(pageParticlePrefab) as GameObject;
-            pagesObj.transform.position = transform.position - new Vector3(0, 0.85f, 0);
-            changeSFX.Play();
+            if (isSwitcheEnabled)
+            {
+                GameObject pagesObj = Instantiate(pageParticlePrefab) as GameObject;
+                pagesObj.transform.position = transform.position - new Vector3(0, 0.85f, 0);
+                changeSFX.Play();
 
-            if (state == OLD)
-            {
-                ChangeToKid();
-                state = KID;
-            }
-            else if (state == KID)
-            {
-                ChangeToOld();
-                state = OLD;
+                if (state == OLD)
+                {
+                    ChangeToKid();
+                    state = KID;
+                }
+                else if (state == KID)
+                {
+                    ChangeToOld();
+                    state = OLD;
+                }
             }
         }
     }
