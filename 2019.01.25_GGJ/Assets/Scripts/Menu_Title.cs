@@ -52,7 +52,7 @@ public class Menu_Title : MonoBehaviour
         {
             if (select % 2 == START)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
             }
             else
             {
