@@ -10,6 +10,7 @@ public class Player_Movement : MonoBehaviour
 
     Rigidbody2D myRGBody;
     Player_AnimationController myAnim;
+    AudioSource walkingSFX;
    
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class Player_Movement : MonoBehaviour
     {
         myRGBody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Player_AnimationController>();
+        walkingSFX = transform.GetChild(3).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -50,14 +52,19 @@ public class Player_Movement : MonoBehaviour
             myRGBody.velocity = Vector2.zero;
         }
 
-        // Trigger/Stoping walking animation
+        // Trigger/Stoping walking animation and sfx
         if (myRGBody.velocity == Vector2.zero)
         {
             myAnim.StopWalking();
+            walkingSFX.Stop();
         }
         else
         {
             myAnim.StartWalking();
+            if (!walkingSFX.isPlaying)
+            {
+                walkingSFX.Play();
+            }
         }
 
         // Flip character depending on direction

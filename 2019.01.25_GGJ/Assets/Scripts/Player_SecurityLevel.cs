@@ -40,7 +40,17 @@ public class Player_SecurityLevel : MonoBehaviour
 
         }
 
-
+        if (level >= 0.78f)
+        {
+            if (!securitySldr.GetComponent<AudioSource>().isPlaying)
+            {
+                securitySldr.GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            securitySldr.GetComponent<AudioSource>().Stop();
+        }
         DrawLevel();
     }
 

@@ -8,10 +8,12 @@ public class Player_LifePoints : MonoBehaviour
     int lifePoint = 3;
     public GameObject hud;
 
+    AudioSource damageSFX;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        damageSFX = transform.GetChild(2).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,6 +22,16 @@ public class Player_LifePoints : MonoBehaviour
         if (lifePoint <= 0)
         {
             //Debug.Log("Game Over");
+        }else if (lifePoint == 1)
+        {
+            if (!hud.GetComponent<AudioSource>().isPlaying)
+            {
+                hud.GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            hud.GetComponent<AudioSource>().Stop();
         }
     }
 
@@ -28,5 +40,6 @@ public class Player_LifePoints : MonoBehaviour
     {
         lifePoint -= 1;
         hud.GetComponent<Animator>().SetTrigger("ReduceLP");
+        damageSFX.Play();
     }
 }

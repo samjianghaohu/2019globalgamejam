@@ -17,6 +17,8 @@ public class Player_FormSwitch : MonoBehaviour
     Player_Movement playerMv;
     Player_Attack playerAtk;
     Player_SecurityLevel playerSLvl;
+
+    AudioSource changeSFX;
     
 
     // Start is called before the first frame update
@@ -26,6 +28,8 @@ public class Player_FormSwitch : MonoBehaviour
         playerMv = GetComponent<Player_Movement>();
         playerAtk = GetComponent<Player_Attack>();
         playerSLvl = GetComponent<Player_SecurityLevel>();
+
+        changeSFX = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +39,7 @@ public class Player_FormSwitch : MonoBehaviour
         {
             GameObject pagesObj = Instantiate(pageParticlePrefab) as GameObject;
             pagesObj.transform.position = transform.position - new Vector3(0, 0.85f, 0);
+            changeSFX.Play();
 
             if (state == OLD)
             {

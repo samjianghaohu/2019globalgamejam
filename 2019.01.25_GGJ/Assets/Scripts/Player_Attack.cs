@@ -10,11 +10,13 @@ public class Player_Attack : MonoBehaviour
 
     float attackTimer;
     Player_AnimationController myAnimControl;
+    AudioSource attackSPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         myAnimControl = GetComponent<Player_AnimationController>();
+        attackSPlayer = transform.GetChild(1).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class Player_Attack : MonoBehaviour
     {
         transform.GetChild(0).gameObject.SetActive(true);
         myAnimControl.Attack();
+        attackSPlayer.Play();
         attackTimer = attackLast;
     }
 }

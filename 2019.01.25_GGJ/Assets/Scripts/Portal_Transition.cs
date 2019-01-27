@@ -74,6 +74,7 @@ public class Portal_Transition : MonoBehaviour
             if (!isTransiting)
             {
                 isTransiting = true;
+                GetComponent<AudioSource>().Play();
             }
         }
     }
