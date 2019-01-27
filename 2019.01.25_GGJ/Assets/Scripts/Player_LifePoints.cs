@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_LifePoints : MonoBehaviour
 {// This script manages player taking damage.
@@ -21,7 +22,7 @@ public class Player_LifePoints : MonoBehaviour
     {
         if (lifePoint <= 0)
         {
-            //Debug.Log("Game Over");
+            SceneManager.LoadScene(3);
         }else if (lifePoint == 1)
         {
             if (!hud.GetComponent<AudioSource>().isPlaying)

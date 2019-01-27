@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/stage1_musician.unity
     guid: b6399b998819244c3ad73b6da01ac275
+  - enabled: 1
+    path: Assets/Scenes/gameOver.unity
+    guid: 4eda5470759bb486fbb0847d4d7e0423
   m_configObjects: {}
