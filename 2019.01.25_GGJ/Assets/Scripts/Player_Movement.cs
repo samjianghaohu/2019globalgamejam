@@ -6,6 +6,8 @@ public class Player_Movement : MonoBehaviour
 { // This scripts manages player movements
 
     public float mvSpd;
+    public bool inCutscene = false;
+
     Rigidbody2D myRGBody;
     Player_AnimationController myAnim;
    
@@ -20,20 +22,28 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (!inCutscene)
         {
-            myRGBody.velocity = new Vector2(0, 1f) * mvSpd * Time.deltaTime;
-        }else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            myRGBody.velocity = new Vector2(0, -1f) * mvSpd * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            myRGBody.velocity = new Vector2(-1, 0) * mvSpd * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            myRGBody.velocity = new Vector2(1, 0) * mvSpd * Time.deltaTime;
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                myRGBody.velocity = new Vector2(0, 1f) * mvSpd * Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                myRGBody.velocity = new Vector2(0, -1f) * mvSpd * Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                myRGBody.velocity = new Vector2(-1, 0) * mvSpd * Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                myRGBody.velocity = new Vector2(1, 0) * mvSpd * Time.deltaTime;
+            }
+            else
+            {
+                myRGBody.velocity = Vector2.zero;
+            }
         }
         else
         {
