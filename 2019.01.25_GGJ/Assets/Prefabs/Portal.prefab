@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe925c722a224b62838dd68b140441d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnabled: 0
 --- !u!114 &1522681959704116850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetAreaTrans: {fileID: 0}
   camTrans: {fileID: 0}
-  fadeSpd: 5
+  fadeSpd: 2.7
   bgmNum: 0
 --- !u!82 &7967070110708338500
 AudioSource:

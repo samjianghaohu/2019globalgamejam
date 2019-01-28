@@ -75,7 +75,7 @@ public class Camera_Movement : MonoBehaviour
     {
         if (blackCurtainRenderer.color.a > 0f)
         {
-            blackCurtainRenderer.color -= new Color(0, 0, 0, 1) * 5 * Time.deltaTime;
+            blackCurtainRenderer.color -= new Color(0, 0, 0, 1) * 2.7f * Time.deltaTime;
         }
         else
         {
