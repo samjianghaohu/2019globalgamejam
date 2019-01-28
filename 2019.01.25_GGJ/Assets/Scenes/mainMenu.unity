@@ -743,6 +743,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconPos1: {x: -5.54, y: -3.34, z: 0}
   iconPos2: {x: 2.4, y: -3.34, z: 0}
+  cursorMove: {fileID: 8300000, guid: 8346cbdc6f8914d54b9cf019dc37d57d, type: 3}
+  selectConfirm: {fileID: 8300000, guid: 77cd39d70d09a4b299802625e6626aee, type: 3}
 --- !u!82 &2052815461
 AudioSource:
   m_ObjectHideFlags: 0

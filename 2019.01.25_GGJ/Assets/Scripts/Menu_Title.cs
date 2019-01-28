@@ -11,7 +11,11 @@ public class Menu_Title : MonoBehaviour
 
     public Vector3 iconPos1;
     public Vector3 iconPos2;
+    public AudioClip cursorMove;
+    public AudioClip selectConfirm;
 
+    bool selectLock = false;
+    bool isConfirmSFXPlayed = false;
     AudioSource selectSFX;
 
     // Start is called before the first frame update
@@ -23,13 +27,34 @@ public class Menu_Title : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            select += 1;
-            selectSFX.Play();
-        }
+
         PlaceIcon();
-        SelectOpt();
+
+        if (!selectLock)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                select += 1;
+                selectSFX.clip = cursorMove;
+                selectSFX.Play();
+            }
+            SelectOpt();
+        }
+
+        if (isConfirmSFXPlayed)
+        {
+            if (!selectSFX.isPlaying)
+            {
+                if (select % 2 == START)
+                {
+                    SceneManager.LoadScene(2);
+                }
+                else
+                {
+                    Application.Quit();
+                }
+            }
+        }
     }
 
 
@@ -52,11 +77,23 @@ public class Menu_Title : MonoBehaviour
         {
             if (select % 2 == START)
             {
-                SceneManager.LoadScene(2);
+                if (!isConfirmSFXPlayed)
+                {
+                    selectSFX.clip = selectConfirm;
+                    selectSFX.Play();
+                    isConfirmSFXPlayed = true;
+                    selectLock = true;
+                }
             }
             else
             {
-                Application.Quit();
+                if (!isConfirmSFXPlayed)
+                {
+                    selectSFX.clip = selectConfirm;
+                    selectSFX.Play();
+                    isConfirmSFXPlayed = true;
+                    selectLock = true;
+                }
             }
         }else if (Input.GetKeyDown(KeyCode.Escape))
         {
