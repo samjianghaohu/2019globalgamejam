@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7572cadddf7446697b7bd3d03a3531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mvSpd: 170
+  mvSpd: 180
   inCutscene: 0
 --- !u!114 &4217688445376446875
 MonoBehaviour:

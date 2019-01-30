@@ -69,7 +69,7 @@ public class Player_FormSwitch : MonoBehaviour
 
     public void ChangeToOld()
     {
-        playerMv.mvSpd = 185f;
+        playerMv.mvSpd = 180f;
         playerAnim.BecomeOld();
         hudObj.GetComponent<Animator>().SetTrigger("BecomeOld");
         playerAtk.isEnabled = false;

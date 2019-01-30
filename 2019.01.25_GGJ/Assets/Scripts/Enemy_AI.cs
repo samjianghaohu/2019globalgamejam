@@ -133,6 +133,10 @@ public class Enemy_AI : MonoBehaviour
 
                 //Unless enemy is stunned, it should tay patrolling if player is blocked and enemy can't see it
             }
+            else
+            {
+                state = PATROL;
+            }
         }
     }
 
