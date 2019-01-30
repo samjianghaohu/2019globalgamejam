@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu_Title : MonoBehaviour
 {
@@ -14,9 +15,16 @@ public class Menu_Title : MonoBehaviour
     public AudioClip cursorMove;
     public AudioClip selectConfirm;
 
+    public SpriteRenderer title;
+    public Text opt1;
+    public Text opt2;
+    public Text load;
+
     bool selectLock = false;
     bool isConfirmSFXPlayed = false;
+    bool isLoadInitialized = false;
     AudioSource selectSFX;
+    AsyncOperation async;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +55,27 @@ public class Menu_Title : MonoBehaviour
             {
                 if (select % 2 == START)
                 {
-                    SceneManager.LoadScene(2);
+                    if (!isLoadInitialized)
+                    {
+                        async = SceneManager.LoadSceneAsync(2);
+                        async.allowSceneActivation = false;
+                        isLoadInitialized = true;
+                    }
+                    else
+                    {
+                        if (async.progress == 0.9f)
+                        {
+                            async.allowSceneActivation = true;
+                        }
+                        else
+                        {
+                            title.enabled = false;
+                            GetComponent<SpriteRenderer>().enabled = false;
+                            opt1.enabled = false;
+                            opt2.enabled = false;
+                            load.enabled = true;
+                        }
+                    }
                 }
                 else
                 {
@@ -73,7 +101,7 @@ public class Menu_Title : MonoBehaviour
 
     void SelectOpt()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
             if (select % 2 == START)
             {
