@@ -9,7 +9,7 @@ public class Menu_Slides : MonoBehaviour
     public Sprite[] slides;
     public string[] texts;
     int currentSlide = 0;
-    float interval = 8.2f;
+    float interval = 14.15f;
     float timer = 0f;
 
     public Text slideText;
@@ -34,7 +34,7 @@ public class Menu_Slides : MonoBehaviour
             timer = interval;
         }
 
-        if (currentSlide >= slides.Length)
+        if (currentSlide >= slides.Length || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene(1);
         }
