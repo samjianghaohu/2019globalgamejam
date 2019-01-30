@@ -9,7 +9,7 @@ public class Menu_Slides : MonoBehaviour
     public Sprite[] slides;
     public string[] texts;
     int currentSlide = 0;
-    float interval = 14.15f;
+    float interval = 7.075f;
     float timer = 0f;
 
     public Text slideText;
