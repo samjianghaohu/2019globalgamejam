@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player_SecurityLevel : MonoBehaviour
 {// This script manages the security level.
@@ -25,9 +26,10 @@ public class Player_SecurityLevel : MonoBehaviour
         if (isKid)
         {
             level += increaseSpd * Time.deltaTime;
-            if (level > 1f)
+            if (level >= 1f)
             {
                 level = 1f;
+                SceneManager.LoadScene(3);
             }
         }
         else

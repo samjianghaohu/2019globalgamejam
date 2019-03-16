@@ -26,25 +26,24 @@ public class Player_Movement : MonoBehaviour
     {
         if (!inCutscene)
         {
+            myRGBody.velocity = Vector2.zero;
+
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                myRGBody.velocity = new Vector2(0, 1f) * mvSpd * Time.deltaTime;
+                myRGBody.velocity = new Vector2(myRGBody.velocity.x, 1f * mvSpd * Time.deltaTime); 
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                myRGBody.velocity = new Vector2(0, -1f) * mvSpd * Time.deltaTime;
+                myRGBody.velocity = new Vector2(myRGBody.velocity.x, -1f * mvSpd * Time.deltaTime);
             }
-            else if (Input.GetKey(KeyCode.LeftArrow))
+
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
-                myRGBody.velocity = new Vector2(-1, 0) * mvSpd * Time.deltaTime;
+                myRGBody.velocity = new Vector2(-1 * mvSpd * Time.deltaTime, myRGBody.velocity.y);
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                myRGBody.velocity = new Vector2(1, 0) * mvSpd * Time.deltaTime;
-            }
-            else
-            {
-                myRGBody.velocity = Vector2.zero;
+                myRGBody.velocity = new Vector2(1 * mvSpd * Time.deltaTime, myRGBody.velocity.y);
             }
         }
         else
